@@ -5,8 +5,9 @@ functions.http('helloGET', (req, res) => {
   fs.readFile("./hotels.json")
     .then((data) => {
       const hotels = JSON.parse(data);
-      const hotelNames = Object.values(hotels);
-      res.send(JSON.stringify(hotelNames));
+      const hotelNames = Object.values(hotels).join('; ');
+      const htmlResponse = `<p style="text-align: center;">${hotelNames}</p>`;
+      res.send(htmlResponse);
     })
     .catch((error) => {
       console.error("Une erreur s'est produite lors de la lecture du fichier :", error);
