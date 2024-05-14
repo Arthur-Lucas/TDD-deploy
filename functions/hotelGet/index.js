@@ -1,20 +1,15 @@
 const fs = require("fs/promises");
 const functions = require('@google-cloud/functions-framework');
 
-function listHotels() {
-  //   return 3;
-  return new Promise((resolve, reject) => {
-    
-  });
-}
-
 functions.http('helloGET', (req, res) => {
   fs.readFile("./hotels.json")
-      .then((data) => {
-        res.send(JSON.stringify(JSON.parse(data)));
-      })
-      .catch((error) => {
-        reject(0); 
-      });
+    .then((data) => {
+      const hotels = JSON.parse(data);
+      const hotelNames = Object.values(hotels);
+      res.send(JSON.stringify(hotelNames));
+    })
+    .catch((error) => {
+      console.error("Une erreur s'est produite lors de la lecture du fichier :", error);
+      res.status(500).send("Une erreur s'est produite lors de la lecture du fichier.");
+    });
 });
-
