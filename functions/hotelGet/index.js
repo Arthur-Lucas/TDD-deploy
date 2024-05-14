@@ -6,7 +6,7 @@ functions.http('helloGET', (req, res) => {
     .then((data) => {
       const hotels = JSON.parse(data);
       const hotelNames = Object.values(hotels).join('; ');
-      const htmlResponse = `<p style="text-align: center;">${hotelNames}</p>`;
+      const htmlResponse = `<p style="text-align: center; font-family :poppins;">${hotelNames}</p>`;
       res.send(htmlResponse);
     })
     .catch((error) => {
