@@ -1,4 +1,6 @@
 const fs = require("fs/promises");
+const functions = require('@google-cloud/functions-framework');
+
 function listHotels() {
   //   return 3;
   return new Promise((resolve, reject) => {
@@ -11,5 +13,9 @@ function listHotels() {
       });
   });
 }
+
+functions.http('helloGET', (req, res) => {
+  res.send('Hello World!');
+});
 
 module.exports = listHotels;
