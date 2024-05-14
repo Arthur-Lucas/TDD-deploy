@@ -1,9 +1,20 @@
-'use strict';
-
+const fs = require("fs/promises");
 const functions = require('@google-cloud/functions-framework');
 
+function listHotels() {
+  //   return 3;
+  return new Promise((resolve, reject) => {
+    
+  });
+}
 
 functions.http('helloGET', (req, res) => {
-  res.send('Hello World!');
+  fs.readFile("./hotels.json")
+      .then((data) => {
+        res.send(JSON.stringify(JSON.parse(data)));
+      })
+      .catch((error) => {
+        reject(0); 
+      });
 });
 
