@@ -1,4 +1,4 @@
-const listHotels = require("./hotels");
+const listHotels = require("./index");
 
 test("must list 1 hotel or more", async () => {
   const result = await listHotels();
