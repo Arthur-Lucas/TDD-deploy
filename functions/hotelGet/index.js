@@ -37,7 +37,11 @@ functions.http("hotelGET", async (req, res) => {
       res.status(204).send("Healt page");
       break;
     default:
-      res.status(404).send("Not Found");
+      res
+        .status(404)
+        .send(
+          "<h1><b>404 - Not Found</b></h1><br> <h2>Please, check the URL</h2>"
+        );
       break;
   }
 });
