@@ -26,6 +26,9 @@ jobs:
         with:
           credentials_json: "${{ secrets.GCP_SA_DEPLOY_KEY }}"
 
+      - name: Run Unit Test
+        run: npm i && npm run test
+
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
         with:
