@@ -1,4 +1,4 @@
-const listHotels = require("./index");
+const { listHotels, listPictures } = require("./index");
 
 test("ListHotelsExactCountOK", async () => {
   const result = await listHotels();
