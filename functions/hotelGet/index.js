@@ -14,7 +14,26 @@ function listHotels() {
   });
 }
 
-module.exports = listHotels;
+function listPictures(hotelName) {
+  return new Promise((resolve, reject) => {
+    // Lit le fichier 'pictures.json' de manière asynchrone
+    fs.readFile("./pictures.json")
+      .then((data) => {
+        var ParsedJSON = JSON.parse(data);
+
+        // Récupère les images de l'hôtel spécifié à partir des données JSON
+        resolve(ParsedJSON[hotelName][0].pictures);
+      })
+      .catch((error) => {
+        reject(0);
+      });
+  });
+}
+
+module.exports = {
+  method: listHotels,
+  otherMethod: listPictures,
+};
 
 functions.http("hotelGET", async (req, res) => {
   const pathName = req.path;
@@ -33,6 +52,18 @@ functions.http("hotelGET", async (req, res) => {
         res.status(500).send("An error occurred while fetching hotel data");
       }
       break;
+    case "/picturesHotel":
+      try {
+        const hotels = await listPictures("hotel1");
+        // if (hotels === 0) {
+        //   throw new Error("Failed to load hotels");
+        // }
+        // const hotelNames = Object.values(hotels).join("; ");
+        // const htmlResponse = `<p style="text-align: center; font-family: poppins;">${hotelNames}</p>`;
+        res.status(200).send(JSON.stringify(hotels));
+      } catch (error) {
+        res.status(500).send("An error occurred while fetching hotel data");
+      }
     case "/healt":
       res.status(204).send("Healt page");
       break;
