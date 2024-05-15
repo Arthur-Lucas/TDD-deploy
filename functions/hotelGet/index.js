@@ -51,13 +51,13 @@ functions.http("hotelGET", async (req, res) => {
       break;
     case "/picturesHotel":
       try {
-        const hotels = await listPictures("hotel1");
-        // if (hotels === 0) {
-        //   throw new Error("Failed to load hotels");
-        // }
-        // const hotelNames = Object.values(hotels).join("; ");
-        // const htmlResponse = `<p style="text-align: center; font-family: poppins;">${hotelNames}</p>`;
-        res.status(200).send(JSON.stringify(hotels));
+        const pictures = await listPictures("hotel1");
+        if (pictures === 0) {
+          throw new Error("Failed to load hotels");
+        }
+        const hotelNames = Object.values(pictures).join("; ");
+        const htmlResponse = `<p style="text-align: center; font-family: poppins;">Pictures : ${hotelNames}</p>`;
+        res.status(200).send(htmlResponse);
       } catch (error) {
         res.status(500).send("An error occurred while fetching hotel data");
       }
