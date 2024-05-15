@@ -3,7 +3,7 @@ run-name: 🚀 ${{ github.actor }} is deploying all cloud functions
 on:
   push:
     branches:
-      - master
+      - main
 
 env:
   PROJECT_ID: YOUR_PROJECT_ID
