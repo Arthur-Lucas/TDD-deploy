@@ -40,7 +40,7 @@ jobs:
             --gen2 \
             --runtime=nodejs20 \
             --region=us-east1 \
-            --source=. \
+            --source=./functions/hotelGet/ \
             --entry-point=helloGET \
             --trigger-http \
             --allow-unauthenticated
