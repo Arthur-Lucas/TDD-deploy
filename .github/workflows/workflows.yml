@@ -44,6 +44,6 @@ jobs:
             --runtime=nodejs20 \
             --region=us-east1 \
             --source=./functions/hotelGet/ \
-            --entry-point=helloGET \
+            --entry-point=hotelGET \
             --trigger-http \
             --allow-unauthenticated

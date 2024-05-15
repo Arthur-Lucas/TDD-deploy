@@ -16,7 +16,7 @@ function listHotels() {
 
 module.exports = listHotels;
 
-functions.http("helloGET", async (req, res) => {
+functions.http("hotelGET", async (req, res) => {
   try {
     const hotels = await listHotels();
     if (hotels === 0) {
