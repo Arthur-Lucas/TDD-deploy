@@ -30,10 +30,7 @@ function listPictures(hotelName) {
   });
 }
 
-module.exports = {
-  method: listHotels,
-  otherMethod: listPictures,
-};
+module.exports = { listHotels, listPictures };
 
 functions.http("hotelGET", async (req, res) => {
   const pathName = req.path;
