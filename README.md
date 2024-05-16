@@ -33,6 +33,22 @@ Ajouter le role “Cloud 	Function Admin” ou “ Cloud Function Developer “ 
 Ensuite cliquer sur le service account nouvellement crée : 
 ![image](https://github.com/Arthur-Lucas/TDD-deploy/assets/117074766/0a053429-11cf-45ca-b3e0-37f2c8ebb2e3)
 
+Pour déployé une cloud function :
+![image](https://github.com/Arthur-Lucas/TDD-deploy/assets/117074766/29187910-d0d1-49ac-ac07-89c892fa57ed)
+
+Cela déploiera la fonction testing
+on peux la voir déployer sur l'interface :
+![image](https://github.com/Arthur-Lucas/TDD-deploy/assets/117074766/14c30799-f6cb-42a9-b67a-b8f8e3d25e12)
+
+Pour la tester aller dans l'onglet "Testing" puis en bas cliquer sur "run in cloud shell"
+![image](https://github.com/Arthur-Lucas/TDD-deploy/assets/117074766/227313d2-9eef-47b0-944d-1635123c7dc8)
+
+Il s'agit d'une simple requête curl, vous pourriez donc la lancer depuis votre code ou bien avec curl mais une header Authaurization est nécéssaire :
+![image](https://github.com/Arthur-Lucas/TDD-deploy/assets/117074766/8694471b-224f-43fe-8df5-06b32e9e83a1)
+
+
+
+
 
 
 
